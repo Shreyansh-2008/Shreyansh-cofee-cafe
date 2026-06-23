@@ -11,16 +11,26 @@ def bill():
     if Latte_var.get()==1:
       total+=200*int(Latte_qty.get())
     gst=total*0.26
-    grand_total=total+gst
+    discount=0
+    if total>= 1000:
+        discount=total*0.10
+    grand_total=total+gst-discount
     bill_no=random.randint(1000,9999)
     current_date=datetime.now().strftime("%d/%m/%y")
     current_time=datetime.now().strftime("%I:%M:%S%p")   
-    result.config(text= "Bill NO" + str(bill_no)+
+    result.config(text="..........................\n"
+                  "SHREYANSH COFFEE CAFE\n"
+                  ".....................\n\n"
+                  "Bill NO" + str(bill_no)+
                   "\nDate and Time:"+str(current_time)+
                   "\nCUSTOMER:  "+customer_name +
                   "\ntotal bill Rs: "+ str(total)+
                   "\nGST (26%): "+ str(gst)+
-                  "\nGrand Total: "+str(grand_total))
+                  "\n discount RS " + str(discount)+
+                  "\nGrand Total: "+str(grand_total)+
+                  "\n\n\n.........................."+
+                  "\nTHANK YOU"+
+                  "\n================================")
 root=Tk()
 root.title(" SHREYANSH COFFE CAFE")
 root.geometry("400x550")
