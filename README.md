@@ -1,2 +1,2 @@
 # Shreyansh-cofee-cafe
-Python Tkinter Coffee Cafe Billing Sysyem
+Python Tkinter Coffee Cafe Billing System
